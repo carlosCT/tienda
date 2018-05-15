@@ -1,0 +1,41 @@
+﻿@model IEnumerable<PruebaTecnica.Models.usuario>
+
+@{
+    ViewBag.Title = "usuarioxCargo";
+}
+
+<h2>usuarioxCargo</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_cod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.usu_nom)
+        </th>
+   
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_cod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.usu_nom)
+        </td>
+  
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.usu_cod }) |
+            @Html.ActionLink("Details", "Details", new { id=item.usu_cod }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.usu_cod })
+        </td>
+    </tr>
+}
+
+</table>

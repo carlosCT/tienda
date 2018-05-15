@@ -1,0 +1,40 @@
+﻿@model IEnumerable<PruebaTecnica.Models.cargo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Personas</h2>
+
+<p> @Html.ActionLink("CreateLink", "Link")</p>
+
+<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.car_cod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.car_des)
+            </th>
+      
+        </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.car_cod)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.car_des)  
+            </td>
+        
+        </tr>
+    }
+
+</table>
+
+
+
